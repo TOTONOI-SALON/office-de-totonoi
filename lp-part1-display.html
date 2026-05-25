@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オフィスdeととのい | 企業向け訪問マッサージサービス</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --green-deep:#1a3d2b;
+  --green-mid:#2d6a4f;
+  --green-light:#52b788;
+  --green-pale:#d8f3dc;
+  --cream:#f8f4ee;
+  --cream-dark:#ede8df;
+  --gold:#9a7b2e;
+  --text-dark:#1a1a18;
+  --text-mid:#4a4a42;
+  --text-light:#7a7a70;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,244,238,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--cream-dark);padding:0 5%;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px;}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:var(--green-deep);letter-spacing:0.06em;line-height:1.4;}
+.nav-logo small{font-size:11px;display:block;color:var(--text-light);letter-spacing:0.1em;font-family:'Noto Sans JP',sans-serif;}
+.nav-cta{background:var(--green-deep);color:var(--white);font-size:13px;padding:9px 20px;border:none;border-radius:4px;cursor:pointer;letter-spacing:0.06em;font-family:'Noto Sans JP',sans-serif;}
+
+section{padding:80px 5%;}
+.container{max-width:1100px;margin:0 auto;}
+.sec-eyebrow{font-size:11px;letter-spacing:0.2em;color:var(--green-mid);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.sec-eyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:var(--green-mid);}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,2.4vw,32px);line-height:1.55;color:var(--green-deep);margin-bottom:44px;letter-spacing:0.03em;}
+
+/* HERO */
+.hero{padding:100px 5% 70px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;min-height:100vh;}
+.hero-eyebrow{font-size:11px;letter-spacing:0.22em;color:var(--green-mid);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--green-mid);}
+h1.hero-hl{font-family:'Noto Serif JP',serif;font-size:clamp(26px,3.2vw,40px);line-height:1.55;font-weight:600;color:var(--green-deep);margin-bottom:24px;letter-spacing:0.04em;}
+h1.hero-hl em{font-style:normal;color:var(--green-mid);}
+.hero-sub{font-size:15px;line-height:1.95;color:var(--text-mid);margin-bottom:32px;}
+.hero-stats{display:flex;gap:0;margin-bottom:36px;border:1px solid var(--cream-dark);border-radius:8px;overflow:hidden;background:var(--white);}
+.hero-stat{flex:1;text-align:center;padding:16px 10px;}
+.hero-stat+.hero-stat{border-left:1px solid var(--cream-dark);}
+.hero-stat-num{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:600;color:var(--green-deep);}
+.hero-stat-label{font-size:11px;color:var(--text-light);letter-spacing:0.05em;margin-top:3px;line-height:1.4;}
+.hero-btns{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.btn-primary{background:var(--green-deep);color:var(--white);border:none;padding:15px 30px;font-size:15px;font-family:'Noto Sans JP',sans-serif;cursor:pointer;border-radius:4px;letter-spacing:0.07em;display:inline-flex;align-items:center;gap:10px;}
+.btn-primary::after{content:'→';}
+.btn-secondary{background:transparent;color:var(--green-mid);border:1.5px solid var(--green-mid);padding:11px 22px;font-size:14px;font-family:'Noto Sans JP',sans-serif;cursor:pointer;border-radius:4px;letter-spacing:0.04em;}
+.hero-micro{font-size:12px;color:var(--text-light);line-height:1.9;margin-top:4px;}
+
+.trust-bar{background:var(--green-deep);padding:28px 5%;}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:56px;flex-wrap:wrap;}
+.trust-item{text-align:center;}
+.trust-num{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:600;color:var(--green-pale);}
+.trust-desc{font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;letter-spacing:0.07em;}
+
+.problem-bg{background:var(--green-deep);}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.problem-card{border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:28px 24px;}
+.problem-num{font-family:'Noto Serif JP',serif;font-size:32px;color:rgba(255,255,255,0.15);font-weight:600;line-height:1;margin-bottom:12px;}
+.problem-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;}
+.problem-body{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.9;}
+.problem-resolve{background:rgba(255,255,255,0.06);border-radius:6px;padding:12px 16px;margin-top:14px;font-size:13px;color:var(--green-light);line-height:1.7;}
+.problem-resolve::before{content:'→ ';}
+
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.benefit-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:8px;padding:32px 26px;position:relative;overflow:hidden;}
+.benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green-mid);}
+.benefit-num{font-family:'Noto Serif JP',serif;font-size:40px;color:var(--green-pale);font-weight:600;line-height:1;margin-bottom:14px;}
+.benefit-title{font-size:17px;font-weight:700;color:var(--green-deep);margin-bottom:12px;}
+.benefit-body{font-size:14px;color:var(--text-mid);line-height:1.9;}
+.benefit-source{font-size:12px;color:var(--green-mid);margin-top:14px;padding-top:14px;border-top:1px solid var(--cream-dark);}
+
+.features-bg{background:var(--white);}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.feature-item{background:var(--cream);border:1px solid var(--cream-dark);border-radius:8px;padding:24px;}
+.feature-num{font-size:11px;letter-spacing:0.14em;color:var(--green-mid);margin-bottom:10px;}
+.feature-title{font-size:15px;font-weight:700;color:var(--green-deep);margin-bottom:8px;}
+.feature-body{font-size:13px;color:var(--text-mid);line-height:1.85;}
+
+.pricing-wrap{background:var(--white);border-radius:8px;border:1px solid var(--cream-dark);overflow:hidden;margin-top:8px;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--green-deep);color:var(--white);padding:14px 12px;font-size:13px;font-weight:500;text-align:center;letter-spacing:0.04em;}
+td{padding:13px 12px;font-size:14px;text-align:center;border-bottom:1px solid var(--cream-dark);color:var(--text-mid);}
+tr:last-child td{border-bottom:none;}
+td:first-child{text-align:left;font-weight:500;color:var(--green-deep);}
+.free-tag{font-size:12px;background:var(--green-pale);color:var(--green-deep);padding:2px 10px;border-radius:20px;font-weight:500;}
+.pricing-note{font-size:12px;color:var(--text-light);margin-top:14px;line-height:1.9;}
+
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.flow-steps::before{content:'';position:absolute;top:36px;left:12%;right:12%;height:1px;background:var(--cream-dark);z-index:0;}
+.flow-step{text-align:center;position:relative;z-index:1;padding:0 12px;}
+.flow-icon{width:72px;height:72px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;}
+.flow-step-num{font-size:11px;letter-spacing:0.12em;color:var(--green-mid);margin-bottom:6px;}
+.flow-step-title{font-size:14px;font-weight:700;color:var(--green-deep);margin-bottom:6px;}
+.flow-step-body{font-size:12px;color:var(--text-mid);line-height:1.75;}
+
+.faq-bg{background:var(--white);}
+.faq-list{display:flex;flex-direction:column;gap:0;}
+.faq-item{border-bottom:1px solid var(--cream-dark);}
+.faq-item:first-child{border-top:1px solid var(--cream-dark);}
+.faq-q{display:flex;align-items:flex-start;gap:14px;padding:20px 0;}
+.faq-q-mark{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:600;color:var(--green-mid);flex-shrink:0;line-height:1.4;}
+.faq-q-text{font-size:15px;font-weight:500;color:var(--text-dark);line-height:1.6;flex:1;}
+.faq-a{display:flex;gap:14px;padding:0 0 20px 0;}
+.faq-a-mark{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:600;color:var(--green-pale);flex-shrink:0;line-height:1.4;}
+.faq-a-text{font-size:14px;color:var(--text-mid);line-height:1.9;flex:1;}
+
+@media(max-width:750px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:90px;}
+  .benefits-grid,.features-grid,.problem-grid{grid-template-columns:1fr;}
+  .flow-steps{grid-template-columns:1fr 1fr;}
+  .trust-inner{gap:28px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">オフィス de ととのい<small>by ととのいsalon.MATSUDO</small></div>
+    <button class="nav-cta">無料体験を申し込む</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1100px;margin:0 auto;padding:0 5%;">
+  <div class="hero" style="padding-left:0;padding-right:0;">
+    <div>
+      <div class="hero-eyebrow">派遣型マッサージサービス</div>
+      <h1 class="hero-hl">口コミ<em>☆4.9</em>のサロンが、<br>そのままオフィスに来る。</h1>
+      <p style="font-family:'Noto Serif JP',serif;font-size:15px;color:var(--green-mid);letter-spacing:0.08em;margin-bottom:20px;">訪問マッサージを通じて"健康×癒し"を、あなたに</p>
+      <p class="hero-sub">松戸の本格リラクゼーションサロン「ととのいsalon.MATSUDO」が職場へ出張。骨盤・肩甲骨・自律神経を整え、社員の疲労・ストレスをその場でケアします。</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">☆4.9</div><div class="hero-stat-label">店舗口コミ評価</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">96%</div><div class="hero-stat-label">効果実感・満足度</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">0円</div><div class="hero-stat-label">初期費用・解約手数料</div></div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-primary">無料体験を申し込む</button>
+        <button class="btn-secondary">メールで問い合わせ</button>
+        <p class="hero-micro">✓ 月1回・3時間〜の小さな導入でOK　✓ 持ち運びベッド持参　✓ 無料体験可能</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-num">☆4.9</div><div class="trust-desc">店舗口コミ評価</div></div>
+    <div class="trust-item"><div class="trust-num">96%</div><div class="trust-desc">効果実感・満足度</div></div>
+    <div class="trust-item"><div class="trust-num">0円</div><div class="trust-desc">初期費用・解約手数料</div></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem-bg">
+  <div class="container">
+    <div class="sec-eyebrow" style="color:var(--green-light);">なぜ今、必要か</div>
+    <h2 class="sec-title" style="color:var(--white);">放置された疲れが、<br>職場のパフォーマンスを蝕んでいる。</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-num">01</div>
+        <div class="problem-title">肩こり・腰痛による集中力の低下</div>
+        <div class="problem-body">デスクワーク中心の職場では、社員の多くが慢性的な肩こりや腰痛を抱えています。痛みは集中力を奪い、じわじわと業務効率を下げます。</div>
+        <div class="problem-resolve">骨盤・肩甲骨調整で根本からケア</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">02</div>
+        <div class="problem-title">ストレス蓄積による離職リスク</div>
+        <div class="problem-body">近年の調査では離職理由の8割がストレスと言われています。ケアが後手に回るほど、採用コストと育成コストが増え続けます。</div>
+        <div class="problem-resolve">自律神経を整えメンタルヘルスケアに</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">03</div>
+        <div class="problem-title">「行く時間がない」で後回しに</div>
+        <div class="problem-body">サロンへ行きたくても、忙しさを理由に後回しにしてしまう社員がほとんどです。通う手間が、ケアを遠ざけています。</div>
+        <div class="problem-resolve">オフィスに来るから、ゼロ手間で継続できる</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section>
+  <div class="container">
+    <div class="sec-eyebrow">導入メリット</div>
+    <h2 class="sec-title">社員が整えば、会社が動く。</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-num">01</div>
+        <div class="benefit-title">生産性が上がる</div>
+        <div class="benefit-body">マッサージは身体の回復力を2倍に向上させます。社員一人ひとりのパフォーマンスが底上げされ、業務効率が改善します。</div>
+        <div class="benefit-source">📊 ハーバード大学研究より</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">02</div>
+        <div class="benefit-title">毎週が楽しみになる</div>
+        <div class="benefit-body">自律神経が整い、睡眠の質が向上。「施術の日が待ち遠しい」という感覚が、チーム全体のモチベーションを静かに高めます。</div>
+        <div class="benefit-source">📊 複数の実験で効果が明らかに</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">03</div>
+        <div class="benefit-title">人材が定着する</div>
+        <div class="benefit-body">離職理由の8割はストレス。「健康に配慮してくれる職場」という評価が定着率を向上させ、採用活動の強みにもなります。</div>
+        <div class="benefit-source">📊 近年の離職調査データより</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-bg">
+  <div class="container">
+    <div class="sec-eyebrow">サービスの特長</div>
+    <h2 class="sec-title">導入のハードルを、<br>限りなくゼロへ。</h2>
+    <div class="features-grid">
+      <div class="feature-item"><div class="feature-num">FEATURE 01</div><div class="feature-title">わずかなスペースでOK</div><div class="feature-body">持ち運びベッドを持参。会議室の一角でもデスク脇でも施術できます。</div></div>
+      <div class="feature-item"><div class="feature-num">FEATURE 02</div><div class="feature-title">初期費用・解約手数料0円</div><div class="feature-body">入会金・出張費・解約手数料はすべて無料。月1回・3時間からスタートできます。</div></div>
+      <div class="feature-item"><div class="feature-num">FEATURE 03</div><div class="feature-title">松戸発・サロン品質の技術</div><div class="feature-body">口コミ☆4.9の実店舗で培った施術技術をそのままお届けします。</div></div>
+      <div class="feature-item"><div class="feature-num">FEATURE 04</div><div class="feature-title">豊富な施術メニュー</div><div class="feature-body">骨盤調整・肩甲骨調整・ヘッドマッサージ・全身リラクゼーション・ストレッチ。</div></div>
+      <div class="feature-item"><div class="feature-num">FEATURE 05</div><div class="feature-title">柔軟な時間帯対応</div><div class="feature-body">基本10時〜19時の間で訪問。時間帯は相談可能です。</div></div>
+      <div class="feature-item"><div class="feature-num">FEATURE 06</div><div class="feature-title">面倒な手続きなし</div><div class="feature-body">お問い合わせから最短3日で訪問できます。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div class="sec-eyebrow">料金プラン</div>
+    <h2 class="sec-title">月30,000円〜、<br>1回から始められる福利厚生。</h2>
+    <div class="pricing-wrap">
+      <table>
+        <thead>
+          <tr><th style="text-align:left;">プラン</th><th>月1回</th><th>月2回</th><th>月4回</th><th>月8回</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>3時間施術</td><td>¥30,000</td><td>¥42,000</td><td>¥78,000</td><td>¥144,000</td></tr>
+          <tr><td>5時間施術</td><td>¥50,000</td><td>¥70,000</td><td>¥130,000</td><td>¥240,000</td></tr>
+          <tr><td>7時間施術</td><td>¥70,000</td><td>¥98,000</td><td>¥182,000</td><td>¥336,000</td></tr>
+          <tr><td>出張費・入会金</td><td><span class="free-tag">無料</span></td><td><span class="free-tag">無料</span></td><td><span class="free-tag">無料</span></td><td><span class="free-tag">無料</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-note">※施術者1人あたり・税抜き表記　／　時間延長：1時間¥10,000〜（税抜）</p>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section style="background:var(--cream);">
+  <div class="container">
+    <div class="sec-eyebrow">導入の流れ</div>
+    <h2 class="sec-title">お問い合わせから<br>最短3日で訪問できます。</h2>
+    <div class="flow-steps">
+      <div class="flow-step"><div class="flow-icon">📞</div><div class="flow-step-num">STEP 01</div><div class="flow-step-title">お問い合わせ</div><div class="flow-step-body">LINEまたはお電話で。まず気軽にご相談ください。</div></div>
+      <div class="flow-step"><div class="flow-icon">📋</div><div class="flow-step-num">STEP 02</div><div class="flow-step-title">ヒアリング・プラン提案</div><div class="flow-step-body">社員数・スペース・ご予算をお伺いし、最適なプランをご提案します。</div></div>
+      <div class="flow-step"><div class="flow-icon">✅</div><div class="flow-step-num">STEP 03</div><div class="flow-step-title">無料体験・日程調整</div><div class="flow-step-body">まずは無料でお試しいただけます。</div></div>
+      <div class="flow-step"><div class="flow-icon">🏢</div><div class="flow-step-num">STEP 04</div><div class="flow-step-title">定期訪問スタート</div><div class="flow-step-body">月1回〜のペースで定期訪問。担当は毎回斎藤が伺います。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-bg">
+  <div class="container">
+    <div class="sec-eyebrow">よくある質問</div>
+    <h2 class="sec-title">気になることは、<br>すべてここで解決します。</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-mark">Q</div><div class="faq-q-text">施術スペースはどれくらい必要ですか？</div></div>
+        <div class="faq-a"><div class="faq-a-mark">A</div><div class="faq-a-text">持ち運びベッドを持参しますので、畳1〜2枚ほどのスペースがあれば施術できます。会議室・休憩室はもちろん、デスクに座ったままでの施術も可能です。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-mark">Q</div><div class="faq-q-text">契約期間の縛りはありますか？</div></div>
+        <div class="faq-a"><div class="faq-a-mark">A</div><div class="faq-a-text">契約期間の縛りはございません。解約手数料も0円です。まず1回の無料体験からお試しいただけます。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-mark">Q</div><div class="faq-q-text">何人まで施術できますか？</div></div>
+        <div class="faq-a"><div class="faq-a-mark">A</div><div class="faq-a-text">3時間プランで約6〜9名、5時間で約10〜15名、7時間で約14〜21名が目安です。複数名の派遣についてもご相談ください。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-mark">Q</div><div class="faq-q-text">対応エリアはどこまでですか？</div></div>
+        <div class="faq-a"><div class="faq-a-mark">A</div><div class="faq-a-text">松戸市を中心に、千葉県・東京都東部エリアを主に対応しています。エリア外についてもお気軽にご相談ください。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><div class="faq-q-mark">Q</div><div class="faq-q-text">施術メニューはカスタマイズできますか？</div></div>
+        <div class="faq-a"><div class="faq-a-mark">A</div><div class="faq-a-text">はい、社員の悩みや希望に応じて、骨盤調整・肩甲骨調整・ヘッドマッサージ・全身リラクゼーション・ストレッチなどを組み合わせてご提供できます。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
